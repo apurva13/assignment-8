@@ -72,21 +72,26 @@ Q.4- Create a class MovieDetails and initialize it with artistname,Year of relea
 #2. Add- Add the movie details.
 '''
 class MovieDetails:
-    def Add(self,name,year,rating):
+    def __init__(self,name,year,rating):
         self.artistname=name
         self.release=year
-        self.rating=rating
+        self.rating=rating        
+    def Add(self,movie):
+        self.movie=movie
     def Display(self):
         print("Artist Name:",self.artistname)
         print("Year of release:",self.release)
         print("Rating:",self.rating)
+        print("Movie Name:",self.movie)
            
-detail=MovieDetails()
 name=input("Enter the Artist Name:")
 year=int(input("Enter Release Year:"))
 rating=int(input("Enter Rating:"))
-detail.Add(name,year,rating)
+movie=input("Enter Movie Name:")
+detail=MovieDetails(name,year,rating)
+detail.Add(movie)
 detail.Display()
+
 '''
 Q.5- Create a class Animal as a base class and define method animal_attribute.
 Create another class Tiger which is inheriting Animal and access the base class method.
@@ -95,7 +100,9 @@ class Animal:
     def animal_attribute(self):
         print("My attribute is:Tiger")
 class Tiger(Animal):
-    pass
+    def tiger_attribute(self):
+        print("Child Class")
+a=Animal()
 t=Tiger()
 t.animal_attribute
 
@@ -121,10 +128,13 @@ print (a.g(), b.g())
 The output will be:
 A B
 A B
+when in code the print statement will be like below else invlaid Syntax
+print (a.f(), b.f()) 
+print (a.g(), b.g())
+
 a.f() calls function def f(self) of class A which calls def g(self) which returns A
 b.f() calls function def f(self) of class B which calls def g(self)which returns B
 a.g() and b.g() will call def g(self) of class A and B respectively.
-Here, method overriding is done.
 '''
 
 
