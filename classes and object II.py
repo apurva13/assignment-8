@@ -98,13 +98,13 @@ Create another class Tiger which is inheriting Animal and access the base class 
 '''
 class Animal:
     def animal_attribute(self):
-        print("My attribute is:Tiger")
+        print("Attribute:Tiger")
 class Tiger(Animal):
-    def tiger_attribute(self):
+    def tiger_attr(self):
         print("Child Class")
 a=Animal()
 t=Tiger()
-t.animal_attribute
+t.animal_attribute()
 
 '''
 Q.6- What will be the output of following code.
